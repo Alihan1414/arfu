@@ -19,8 +19,18 @@ function reportSuspect(name) {
 
     modal.classList.remove('hidden');
 
-    // Panik yaratan siren sesi efekti
-    playBeep();
+    // Panik yaratan siren veya komik ses efekti
+    if (name === 'Beyin') {
+        // Beyin için özel bir şey çalınmayacak çünkü ona tıklanınca Thug Life çalıyor
+    } else {
+        const boom = document.getElementById('boom-audio');
+        if (boom) {
+            boom.currentTime = 0;
+            boom.play().catch(e => playBeep()); // Ses yüklenemezse eski bip sesini çal
+        } else {
+            playBeep();
+        }
+    }
 }
 
 function closeModal() {
@@ -51,5 +61,39 @@ function playBeep() {
         osc.stop(ctx.currentTime + 1);
     } catch(e) {
         console.log("Ses oynatılamadı, tarayıcı etkileşim bekliyor olabilir.");
+    }
+}
+
+// Canlı IQ Sayacı (Su gibi akar)
+let iqLost = 999990;
+let iqGained = 999999999000;
+setInterval(() => {
+    // Vites & Direksiyon IQ'yu çılgın gibi düşürüyor (kayıp artıyor)
+    iqLost += Math.floor(Math.random() * 80) + 20;
+    document.getElementById('iq-lost-value').innerText = iqLost.toLocaleString('tr-TR');
+    
+    // Beyin (Sen) IQ'yu tanrısal bir hızda uçuruyor
+    iqGained += Math.floor(Math.random() * 50000) + 10000;
+    document.getElementById('iq-gained-value').innerText = iqGained.toLocaleString('tr-TR');
+}, 50); // Saniyede 20 kere güncellenir (çok çok hızlı)
+
+// Thug Life Animasyonu (Telefonda resme dokununca çalışır)
+function triggerThugLife() {
+    const glasses = document.getElementById('thug-glasses');
+    const cigar = document.getElementById('thug-cigar');
+    const thugAudio = document.getElementById('thug-audio');
+    
+    glasses.classList.add('drop');
+    cigar.classList.add('appear');
+    
+    // Thug Life Müziğini Çal
+    if (thugAudio) {
+        thugAudio.currentTime = 0; // Başa sar
+        thugAudio.play().catch(e => console.log("Müzik çalınamadı:", e));
+    }
+    
+    // Basit bir titreşim (Telefon destekliyorsa sallanır)
+    if (navigator.vibrate) {
+        navigator.vibrate([200, 100, 200]);
     }
 }

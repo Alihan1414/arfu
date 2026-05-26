@@ -36,13 +36,13 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem; /* Telefondan rahat görünmesi için */
     position: relative;
     z-index: 10;
 }
 
 .glitch-header {
-    font-size: 3rem;
+    font-size: 2.2rem; /* Telefondan sığması için küçüldü */
     text-align: center;
     color: var(--text-danger);
     text-transform: uppercase;
@@ -54,15 +54,15 @@ body {
 
 .subtitle {
     text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     color: #fff;
 }
 
 .suspects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1px));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Telefona tam oturacak ölçü */
+    gap: 2rem;
     justify-content: center;
 }
 
@@ -83,7 +83,7 @@ body {
 
 .image-wrapper {
     position: relative;
-    height: 350px;
+    height: 300px; /* Telefona uygun yükseklik */
     background: #111;
     overflow: hidden;
     display: flex;
@@ -205,6 +205,93 @@ body {
     background: #ffd700;
     color: #000;
     box-shadow: 0 0 20px #ffd700;
+}
+
+/* IQ Counter */
+.iq-counter-container {
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.8);
+    background: #000;
+}
+
+.iq-box {
+    flex: 1;
+    text-align: center;
+    padding: 8px 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.iq-lost {
+    background: rgba(255, 0, 0, 0.85);
+    color: #fff;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #f00;
+}
+
+.iq-lost span#iq-lost-value {
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 4px;
+    color: #fff;
+}
+
+.iq-gained {
+    background: rgba(0, 180, 0, 0.85);
+    color: #fff;
+    border-bottom: 2px solid #0f0;
+}
+
+.iq-gained span#iq-gained-value {
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 4px;
+    color: #fff;
+}
+.blink {
+    animation: blink 1s infinite;
+}
+
+/* Thug Life Gözlüğü ve Puro */
+.thug-glasses {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 100px; /* Dev gözlük */
+    opacity: 0;
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.thug-glasses.drop {
+    top: 25%; /* Resimdeki yüz hizasına düşer (aşağı yukarı) */
+    opacity: 1;
+}
+
+.thug-cigar {
+    position: absolute;
+    bottom: -50px;
+    right: 35%;
+    font-size: 60px;
+    opacity: 0;
+    transition: all 0.5s ease;
+    transition-delay: 1.2s; /* Gözlük indikten sonra gelir */
+    pointer-events: none;
+    z-index: 5;
+    transform: scaleX(-1); /* Ters çevir ki ağız hizasına baksın */
+}
+
+.thug-cigar.appear {
+    bottom: 20%;
+    opacity: 1;
 }
 
 
