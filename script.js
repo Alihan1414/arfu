@@ -5,10 +5,16 @@ function reportSuspect(name) {
 
     modalTitle.innerText = "🚨 SİNYAL TAKİP EDİLİYOR... 🚨";
     
-    if(name === 'Gölge') {
+    if(name === 'Direksiyon') {
         modalDesc.innerHTML = `<strong>${name}</strong> kod adlı şahsın konumu yatak odası olarak tespit edildi.<br><br>Özel Harekât ve Sağlık Ekipleri yola çıktı. Şahsa yaklaşırken dikkatli olun! Kesinlikle göz teması kurmayın.`;
-    } else {
+    } else if(name === 'Vites') {
         modalDesc.innerHTML = `<strong>${name}</strong> kod adlı şahsın hastane acilinde 'hastayım' bahanesiyle yattığı tespit edildi.<br><br>Karantina ekipleri olay yerine intikal ediyor. Lütfen maskenizi takın ve hastalık bulaşmaması için ona yaklaşmayın!`;
+    } else if(name === 'Beyin') {
+        modalTitle.innerText = "⚠️ SİSTEME ERİŞİM ENGELLENDİ ⚠️";
+        modalTitle.style.color = "#ffd700";
+        modalDesc.innerHTML = `<strong style="font-size: 1.5rem; color: #ffd700;">Sen kimsin beni ihbar ediceksin lolipop? 🍭</strong><br><br>Sistemin sahibi benim. Haddini bil, o fareyi yavaşça yere bırak ve hemen bu sayfayı kapat.`;
+        document.querySelector('.modal-content').style.borderColor = "#ffd700";
+        document.querySelector('.modal-content').style.boxShadow = "0 0 50px rgba(255, 215, 0, 0.6)";
     }
 
     modal.classList.remove('hidden');
