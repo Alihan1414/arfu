@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GİZLİ VERİTABANI | ARANANLAR</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="scanlines"></div>
+    <div class="container">
+        <header class="glitch-header" data-text="TEHLİKELİ ŞAHISLAR BİLDİRİM SİSTEMİ">TEHLİKELİ ŞAHISLAR BİLDİRİM SİSTEMİ</header>
+        <p class="subtitle">DİKKAT: Aşağıdaki şahıslar uluslararası "Boş Yapma" suçundan aranmaktadır. Görülmeleri halinde yaklaşmayınız.</p>
+        
+        <div class="suspects-grid">
+            <!-- 1. Arkadaş (Deniz kenarındaki) -->
+            <div class="suspect-card">
+                <div class="image-wrapper">
+                    <!-- BURAYA RESMİ KOYACAKSIN -->
+                    <img src="images/gölge.jpg" alt="Şüpheli 1" id="img-suspect1" onerror="this.src='https://via.placeholder.com/350x300/111/fff?text=FOTO%C4%9ERAF+BEKLEN%C4%B0YOR'">
+                    <div class="overlay-text">ARANIYOR</div>
+                </div>
+                <div class="suspect-info">
+                    <h2>KOD ADI: "GÖLGE"</h2>
+                    <ul>
+                        <li><strong>Suç:</strong> Otizmli gibi davranması</li>
+                        <li><strong>Tehlike Seviyesi:</strong> Aşırı mal</li>
+                        <li><strong>Son Görülme:</strong> Yatak odası</li>
+                    </ul>
+                    <button class="report-btn" onclick="reportSuspect('Gölge')">İHBAR ET</button>
+                </div>
+            </div>
+
+            <!-- 2. Arkadaş (Arabaya yaslanan) -->
+            <div class="suspect-card">
+                <div class="image-wrapper">
+                    <!-- BURAYA RESMİ KOYACAKSIN -->
+                    <img src="images/vites.jpg" alt="Şüpheli 2" id="img-suspect2" onerror="this.src='https://via.placeholder.com/350x300/111/fff?text=FOTO%C4%9ERAF+BEKLEN%C4%B0YOR'">
+                    <div class="overlay-text">ARANIYOR</div>
+                </div>
+                <div class="suspect-info">
+                    <h2>KOD ADI: "VİTES"</h2>
+                    <ul>
+                        <li><strong>Suç:</strong> Hastayım diyerek habire eve kaçmak</li>
+                        <li><strong>Tehlike Seviyesi:</strong> Hastalık bulaşabilir</li>
+                        <li><strong>Son Görülme:</strong> Hastane</li>
+                    </ul>
+                    <button class="report-btn" onclick="reportSuspect('Vites')">İHBAR ET</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">SİNYAL TAKİP EDİLİYOR...</h2>
+            <p id="modal-desc">Konumunuz FBI, CIA ve Pendik Zabıtasına iletildi. Lütfen şahsı oyalayın, bedava çay ikram edin.</p>
+            <button class="close-btn" onclick="closeModal()">ANLAŞILDI</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

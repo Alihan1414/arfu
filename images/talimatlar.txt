@@ -1,0 +1,4 @@
+Bu klasöre arkadaşlarının fotoğraflarını yükle.
+1. Deniz kenarındaki fotoğrafı "gölge.jpg" olarak adlandır.
+2. Arabaya yaslanan fotoğrafı "vites.jpg" olarak adlandır.
+Ve bu klasöre at.
